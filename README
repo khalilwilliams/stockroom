@@ -1,0 +1,68 @@
+Stockroom — Inventory Management System
+
+A lightweight, browser-based inventory management application built with HTML, CSS, and JavaScript. Stockroom helps users track products, monitor stock levels, and manage inventory through a simple, responsive interface.
+
+Features
+
+Inventory Management: Add, edit, and delete inventory items.
+Stock Control: Reduce item quantities and monitor remaining stock.
+Search and Filtering: Find products and filter inventory by stock status.
+Dashboard: View inventory summary counts.
+Data Persistence: Save inventory in the browser using localStorage.
+CSV Export: Export inventory data for reporting and recordkeeping.
+SKU Validation: Prevent duplicate stock-keeping units.
+Responsive Interface: Use the application on desktop and mobile screens.
+Technologies Used
+
+HTML5
+CSS3
+JavaScript (Vanilla JavaScript)
+Browser localStorage
+CSV file export
+Getting Started
+
+Run Locally
+
+Clone this repository:
+Navigate to the project folder:
+Open index.html in your browser, or open the project in Visual Studio Code and use a local development server.
+No backend server or database installation is required for the current version.
+
+How to Use
+
+Add an inventory item with its product details and quantity.
+Edit product information as needed.
+Reduce stock when inventory is used or sold.
+Search for products or filter items by stock status.
+Delete items that are no longer needed.
+Export inventory data as a CSV file.
+Refresh the page to confirm that your saved inventory remains available in the same browser.
+Data Storage and Limitations
+
+Stockroom currently stores inventory data in the browser’s localStorage.
+
+Data is stored separately in each browser and on each device.
+Inventory is not shared between different users.
+Clearing browser storage may remove saved inventory.
+The current version does not include user accounts, cloud synchronization, or a server-side database.
+This version is intended as a functional prototype and demonstration of browser-based inventory management.
+
+Future Improvements
+
+Potential enhancements include:
+
+Backend API and database integration
+User authentication and role-based permissions
+Shared inventory across multiple devices
+Low-stock alerts
+Inventory transaction history
+Automated testing and deployment improvements
+Project Purpose
+
+This project demonstrates practical application development using core web technologies, including DOM manipulation, event handling, functions, arrays and objects, form validation, browser storage, filtering, and data export.
+
+It is part of an ongoing effort to build practical software solutions and strengthen full-stack development skills.
+
+License
+
+No license has been specified yet. Unless a license is added to this repository, others should not assume they have permission to reuse, modify, or distribute this code.

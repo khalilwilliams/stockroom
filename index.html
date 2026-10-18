@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple inventory management application."
+    />
+    <title>Stockroom | Inventory Manager</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="#" class="brand">Stockroom</a>
+      <span>Inventory Management</span>
+    </header>
+
+    <main class="container">
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow">INVENTORY CONTROL</p>
+          <h1>Inventory</h1>
+          <p class="muted">Manage your items and monitor stock levels.</p>
+        </div>
+      </section>
+
+      <section class="dashboard" aria-label="Inventory summary">
+        <article class="stat-card">
+          <span>Total items</span>
+          <strong id="totalItems">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Total units</span>
+          <strong id="totalUnits">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Low stock</span>
+          <strong id="lowStock">0</strong>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2 id="formTitle">Add inventory item</h2>
+
+        <form id="inventoryForm">
+          <input type="hidden" id="itemId" />
+
+          <div class="form-grid">
+            <label>
+              SKU
+              <input
+                id="sku"
+                type="text"
+                required
+                maxlength="40"
+                placeholder="e.g. ITEM-001"
+              />
+            </label>
+
+            <label>
+              Item name
+              <input
+                id="name"
+                type="text"
+                required
+                maxlength="100"
+                placeholder="Item name"
+              />
+            </label>
+
+            <label>
+              Category
+              <input
+                id="category"
+                type="text"
+                required
+                maxlength="60"
+                placeholder="e.g. Supplies"
+              />
+            </label>
+
+            <label>
+              Quantity
+              <input
+                id="quantity"
+                type="number"
+                min="0"
+                step="1"
+                required
+                value="0"
+              />
+            </label>
+
+            <label>
+              Reorder threshold
+              <input
+                id="reorderLevel"
+                type="number"
+                min="0"
+                step="1"
+                required
+                value="5"
+              />
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="saveButton">Add item</button>
+            <button type="button" id="cancelButton" class="secondary hidden">
+              Cancel edit
+            </button>
+          </div>
+          <p id="formMessage" class="message" role="status"></p>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="inventory-heading">
+          <div>
+            <h2>Inventory records</h2>
+            <p class="muted">Search, review, and update your stock.</p>
+          </div>
+          <button type="button" id="exportButton" class="secondary">
+            Export CSV
+          </button>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-label">
+            <span>Search inventory</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search SKU or item name"
+            />
+          </label>
+
+          <label>
+            Stock status
+            <select id="statusFilter">
+              <option value="all">All items</option>
+              <option value="in-stock">In stock</option>
+              <option value="low">Low stock</option>
+              <option value="out">Out of stock</option>
+            </select>
+          </label>
+        </div>
+
+        <p id="resultsCount" class="muted" aria-live="polite">0 items</p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>SKU</th>
+                <th>Item</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Stock status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="inventoryBody"></tbody>
+          </table>
+        </div>
+
+        <p id="emptyState" class="empty-state">
+          No inventory records yet. Add your first item above.
+        </p>
+      </section>
+    </main>
+
+    <footer>Stockroom · Local inventory prototype</footer>
+  </body>
+</html>

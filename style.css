@@ -1,0 +1,320 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #202a36;
+  background: #f4f6f8;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.topbar {
+  min-height: 64px;
+  padding: 16px 6%;
+  background: #172b4d;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 750;
+  color: white;
+  text-decoration: none;
+}
+
+.topbar span {
+  font-size: 0.9rem;
+  color: #d5deeb;
+}
+
+.container {
+  max-width: 1200px;
+  width: 92%;
+  margin: 32px auto;
+}
+
+.page-heading {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #526781;
+}
+
+h1 {
+  margin: 8px 0;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+.muted {
+  color: #697586;
+  font-size: 0.9rem;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card,
+.panel {
+  background: white;
+  border: 1px solid #e1e6ed;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.stat-card span {
+  display: block;
+  color: #697586;
+  font-size: 0.9rem;
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 12px;
+  font-size: 2rem;
+}
+
+.panel {
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #ccd4df;
+  border-radius: 7px;
+  background: white;
+  color: #202a36;
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+  outline: 2px solid #3977d5;
+  outline-offset: 2px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  border: 0;
+  border-radius: 7px;
+  padding: 10px 15px;
+  background: #245db3;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  filter: brightness(0.93);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  background: #edf1f6;
+  color: #25364c;
+}
+
+button.danger {
+  background: #a52b36;
+}
+
+button.small {
+  padding: 7px 10px;
+  font-size: 0.8rem;
+}
+
+.inventory-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.inventory-heading h2 {
+  margin-bottom: 6px;
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr);
+  gap: 16px;
+  margin: 24px 0 16px;
+}
+
+.search-label > span {
+  font-size: 0.875rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e8ecf1;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+th {
+  color: #526174;
+  background: #f8fafc;
+  font-weight: 650;
+}
+
+td:first-child {
+  font-weight: 650;
+}
+
+.status {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.status.in-stock {
+  background: #e2f5e9;
+  color: #17683a;
+}
+
+.status.low {
+  background: #fff0d2;
+  color: #805100;
+}
+
+.status.out {
+  background: #fde7e8;
+  color: #9d202b;
+}
+
+.row-actions {
+  display: flex;
+  gap: 7px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 28px 12px;
+  color: #697586;
+}
+
+.hidden {
+  display: none;
+}
+
+.message {
+  min-height: 1.2em;
+  color: #a52b36;
+  font-size: 0.875rem;
+}
+
+footer {
+  text-align: center;
+  color: #697586;
+  padding: 16px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 94%;
+    margin-top: 22px;
+  }
+
+  .dashboard {
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 14px;
+  }
+
+  .stat-card strong {
+    font-size: 1.5rem;
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .inventory-heading {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 420px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar span {
+    font-size: 0.75rem;
+  }
+}
